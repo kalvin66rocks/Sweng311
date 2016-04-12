@@ -125,9 +125,6 @@ public class Lab12 {
                     }
                 }
             }
-
-            output.format("%s%n", temp);
-            temp = "";
         } catch (FormatterClosedException formatterClosedException) {
             System.err.println("Error writing to file. Terminating.");
             System.exit(1);
@@ -140,106 +137,83 @@ public class Lab12 {
                 switch (run) {
                     case 0:
                         return ("A");
-                        break;
                     case 1:
                         return ("B");
-                        break;
                     case 2:
                         return ("C");
-                        break;
                 }
                 break;
             case 3:
                 switch (run) {
                     case 0:
                         return ("D");
-                        break;
                     case 1:
                         return ("E");
-                        break;
                     case 2:
                         return ("F");
-                        break;
                 }
                 break;
             case 4:
                 switch (run) {
                     case 0:
                         return ("G");
-                        break;
                     case 1:
                         return ("H");
-                        break;
                     case 2:
                         return ("I");
-                        break;
                 }
                 break;
             case 5:
                 switch (run) {
                     case 0:
                         return ("J");
-                        break;
                     case 1:
                         return ("K");
-                        break;
                     case 2:
                         return ("L");
-                        break;
                 }
                 break;
             case 6:
                 switch (run) {
                     case 0:
                         return ("M");
-                        break;
                     case 1:
                         return ("N");
-                        break;
                     case 2:
                         return ("O");
-                        break;
                 }
                 break;
             case 7:
                 switch (run) {
                     case 0:
                         return ("P");
-                        break;
                     case 1:
                         return ("R");
-                        break;
                     case 2:
                         return ("S");
-                        break;
                 }
                 break;
             case 8:
                 switch (run) {
                     case 0:
                         return ("T");
-                        break;
                     case 1:
                         return ("U");
-                        break;
                     case 2:
                         return ("V");
-                        break;
                 }
                 break;
             case 9:
                 switch (run) {
                     case 0:
                         return ("W");
-                        break;
                     case 1:
                         return ("X");
-                        break;
                     case 2:
                         return ("Y");
-                        break;
                 }
                 break;
         }
+        return ("ERROR");
     }
 }
