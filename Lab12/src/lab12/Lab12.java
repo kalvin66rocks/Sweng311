@@ -14,7 +14,7 @@ import java.util.Vector;
 
 /**
  *
- * @author kalvi_000
+ * @author Kevin Brenneman
  */
 public class Lab12 {
 
@@ -25,20 +25,24 @@ public class Lab12 {
     private Vector<String> combinations = new Vector<>(1, 1);
 
     public static void main(String[] args) {
-        // TODO code application logic here
+        //new scanner object
         Scanner input = new Scanner(System.in);
+        //variable for user input
         boolean valid = false;
         int phone_number = 0;
 
         while (!valid) {
             System.out.printf("Enter a phone number (digits greater than 1 only): ");
+            //get user input
             try {
                 phone_number = input.nextInt();
                 valid = true;
+                //catch a mismatch exception
             } catch (InputMismatchException e) {
                 System.err.println("That is not a number, please enter a valid number");
                 valid = false;
             }
+            //ensure that the number does not contain a 1 or a 0
             if (valid) {
                 int temp = phone_number;
                 while (temp != 0) {
@@ -55,6 +59,7 @@ public class Lab12 {
                     temp = temp / 10;
                 }
             }
+            // makes sure the phone number is 7 digits
             if (valid) {
                 if (phone_number < 1000000 || phone_number > 10000000) {
                     System.out.println("You must enter a 7 digit number");
@@ -63,30 +68,37 @@ public class Lab12 {
             }
         }
 
+        //open the file
         openFile();
+        //write the combinations of letters to the file
         writeFile(phone_number);
+        //close the file
         closeFile();
     }
 
+    //open the file
     public static void openFile() {
+        //try to open the file
         try {
             output = new Formatter("output.txt");
+            //catch if we cannot open the file
         } catch (SecurityException securityException) {
             System.err.println("Write access denied. Terminating");
             System.exit(1);
+            //catch if the file does not exist
         } catch (FileNotFoundException fileNotFoundException) {
             System.err.println("Error opening file. Terminating");
             System.exit(1);
         }
     }
 
+    //close the file
     public static void closeFile() {
         output.close();
     }
 
+    //write values to the file
     public static void writeFile(int number) {
-        int run = 0;
-        int run1 = 0;
         String temp = "";
         //try block for writing to the file
         try {
@@ -124,6 +136,7 @@ public class Lab12 {
                                     for (int o = 0; o < 3; o++) {
                                         temp = temp.substring(0, 6);
                                         temp = temp.concat(letterSelect(num6, o));
+                                        //write the string to the file
                                         output.format("%s%n", temp);
                                     }
                                 }
@@ -132,12 +145,14 @@ public class Lab12 {
                     }
                 }
             }
+            //catch if we get a weird error where we cannot write to the file
         } catch (FormatterClosedException formatterClosedException) {
             System.err.println("Error writing to file. Terminating.");
             System.exit(1);
         }
     }
 
+    //determine what letter we are going to add to the string based off of what number and iteration we are on
     public static String letterSelect(int number, int run) {
         switch (number) {
             case 2:
@@ -221,6 +236,7 @@ public class Lab12 {
                 }
                 break;
         }
+        //we should never hit this, but java required a default return value
         return ("ERROR");
     }
 }
