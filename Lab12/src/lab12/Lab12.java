@@ -88,32 +88,39 @@ public class Lab12 {
         int run = 0;
         int run1 = 0;
         String temp = "";
-        //int power = 100000;
+        //try block for writing to the file
         try {
+            //for loop for the first digit
             for (int i = 0; i < 3; i++) {
                 temp = "";
                 temp = temp.concat(letterSelect((number / 1000000), i));
                 int num1 = number % 1000000;
+                //for loop for the second digit
                 for (int j = 0; j < 3; j++) {
                     temp = temp.substring(0, 1);
                     temp = temp.concat(letterSelect(num1 / 100000, j));
                     int num2 = number % 100000;
+                    //for loop for the third digit
                     for (int k = 0; k < 3; k++) {
                         temp = temp.substring(0, 2);
                         temp = temp.concat(letterSelect(num2 / 10000, k));
                         int num3 = number % 10000;
+                        //for loop for the fourth digit
                         for (int l = 0; l < 3; l++) {
                             temp = temp.substring(0, 3);
                             temp = temp.concat(letterSelect(num3 / 1000, l));
                             int num4 = number % 1000;
+                            //for loop for the fifth digit
                             for (int m = 0; m < 3; m++) {
                                 temp = temp.substring(0, 4);
                                 temp = temp.concat(letterSelect(num4 / 100, m));
                                 int num5 = number % 100;
+                                //for loop for the sixth digit
                                 for (int n = 0; n < 3; n++) {
                                     temp = temp.substring(0, 5);
                                     temp = temp.concat(letterSelect(num4 / 10, n));
                                     int num6 = number % 10;
+                                    //for loop for the seventh digit
                                     for (int o = 0; o < 3; o++) {
                                         temp = temp.substring(0, 6);
                                         temp = temp.concat(letterSelect(num6, o));
