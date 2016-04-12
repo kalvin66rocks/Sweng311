@@ -95,27 +95,27 @@ public class Lab12 {
                 temp = temp.concat(letterSelect((number / 1000000), i));
                 int num1 = number % 1000000;
                 for (int j = 0; j < 3; j++) {
-                    temp = temp.substring(0, 0);
+                    temp = temp.substring(0, 1);
                     temp = temp.concat(letterSelect(num1 / 100000, j));
                     int num2 = number % 100000;
                     for (int k = 0; k < 3; k++) {
-                        temp = temp.substring(0, 1);
+                        temp = temp.substring(0, 2);
                         temp = temp.concat(letterSelect(num2 / 10000, k));
                         int num3 = number % 10000;
                         for (int l = 0; l < 3; l++) {
-                            temp = temp.substring(0, 2);
+                            temp = temp.substring(0, 3);
                             temp = temp.concat(letterSelect(num3 / 1000, l));
                             int num4 = number % 1000;
                             for (int m = 0; m < 3; m++) {
-                                temp = temp.substring(0, 3);
+                                temp = temp.substring(0, 4);
                                 temp = temp.concat(letterSelect(num4 / 100, m));
                                 int num5 = number % 100;
                                 for (int n = 0; n < 3; n++) {
-                                    temp = temp.substring(0, 4);
+                                    temp = temp.substring(0, 5);
                                     temp = temp.concat(letterSelect(num4 / 10, n));
                                     int num6 = number % 10;
                                     for (int o = 0; o < 3; o++) {
-                                        temp = temp.substring(0, 5);
+                                        temp = temp.substring(0, 6);
                                         temp = temp.concat(letterSelect(num6, o));
                                         output.format("%s%n", temp);
                                     }
@@ -125,9 +125,6 @@ public class Lab12 {
                     }
                 }
             }
-
-            output.format("%s%n", temp);
-            temp = "";
         } catch (FormatterClosedException formatterClosedException) {
             System.err.println("Error writing to file. Terminating.");
             System.exit(1);
@@ -140,106 +137,83 @@ public class Lab12 {
                 switch (run) {
                     case 0:
                         return ("A");
-                        break;
                     case 1:
                         return ("B");
-                        break;
                     case 2:
                         return ("C");
-                        break;
                 }
                 break;
             case 3:
                 switch (run) {
                     case 0:
                         return ("D");
-                        break;
                     case 1:
                         return ("E");
-                        break;
                     case 2:
                         return ("F");
-                        break;
                 }
                 break;
             case 4:
                 switch (run) {
                     case 0:
                         return ("G");
-                        break;
                     case 1:
                         return ("H");
-                        break;
                     case 2:
                         return ("I");
-                        break;
                 }
                 break;
             case 5:
                 switch (run) {
                     case 0:
                         return ("J");
-                        break;
                     case 1:
                         return ("K");
-                        break;
                     case 2:
                         return ("L");
-                        break;
                 }
                 break;
             case 6:
                 switch (run) {
                     case 0:
                         return ("M");
-                        break;
                     case 1:
                         return ("N");
-                        break;
                     case 2:
                         return ("O");
-                        break;
                 }
                 break;
             case 7:
                 switch (run) {
                     case 0:
                         return ("P");
-                        break;
                     case 1:
                         return ("R");
-                        break;
                     case 2:
                         return ("S");
-                        break;
                 }
                 break;
             case 8:
                 switch (run) {
                     case 0:
                         return ("T");
-                        break;
                     case 1:
                         return ("U");
-                        break;
                     case 2:
                         return ("V");
-                        break;
                 }
                 break;
             case 9:
                 switch (run) {
                     case 0:
                         return ("W");
-                        break;
                     case 1:
                         return ("X");
-                        break;
                     case 2:
                         return ("Y");
-                        break;
                 }
                 break;
         }
+        return ("ERROR");
     }
 }
