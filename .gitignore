@@ -61,3 +61,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/Lab13/lab13/nbproject/private/
+/Lab13/lab13/build/
